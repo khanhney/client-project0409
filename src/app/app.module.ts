@@ -17,6 +17,7 @@ import { userReducer } from './ngrx/userReducer';
 
 import { RequireLoginGuard } from './require-login.guard';
 import { PreventReSignInGuard } from './prevent-re-sign-in.guard';
+import { RequestWithToken } from './services/request-with-token.service';
 
 const routesConfig: Routes = [
   { path: '', component: HomeComponent },
@@ -46,7 +47,8 @@ const routesConfig: Routes = [
   ],
   providers: [
     RequireLoginGuard,
-    PreventReSignInGuard
+    PreventReSignInGuard,
+    RequestWithToken
   ],
   bootstrap: [AppComponent]
 })
