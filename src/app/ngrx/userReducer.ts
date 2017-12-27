@@ -6,7 +6,7 @@ const defaultUser: User = {
     token: '123'
 };
 
-export function userReducer(state = defaultUser, action: Action): null | User {
+export function userReducer(state = null, action: Action): null | User {
     if (action.type === 'SET_USER') {
         return action.payload.user;
     }

@@ -1,3 +1,7 @@
-<p>
-  sign-in works!
-</p>
+<form (ngSubmit)="onSubmit()" [formGroup]="formSignIn">
+  <input type="text" placeholder="Email" formControlName="username"/>
+  <br><br>
+  <input type="password" placeholder="Password" formControlName="password">
+  <br><br>
+  <button>Sign In</button>
+</form>
