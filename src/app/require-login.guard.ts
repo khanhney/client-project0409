@@ -14,6 +14,9 @@ export class RequireLoginGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-      return Observable.from(this.user).map(u => !!u);
+      return Observable.from(this.user).map(u => {
+        if (!u) this.router.navigate(['/signin']);
+        return !!u;
+      });
   }
 }
