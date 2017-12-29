@@ -32,4 +32,13 @@ export class UserService {
         this.store.dispatch({ type: 'SET_USER', payload: { user: null } });
         this.router.navigate(['/signin']);
     }
+
+    signUp(value) {
+        this.request.post('/user/signup', value)
+        .then(res => {
+          if (!res.success) return alert('Email da ton tai');
+          alert('Dang ky thanh cong');
+          this.router.navigate(['/signin']);
+        });
+    }
 }
