@@ -26,4 +26,10 @@ export class UserService {
           this.router.navigate(['/profile']);
         });
     }
+
+    logOut() {
+        localStorage.removeItem('token');
+        this.store.dispatch({ type: 'SET_USER', payload: { user: null } });
+        this.router.navigate(['/signin']);
+    }
 }
