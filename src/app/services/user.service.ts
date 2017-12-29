@@ -16,7 +16,7 @@ export class UserService {
     signIn(value) {
         this.request.post('/user/signin', value)
         .then(res => {
-          if (!res.success) alert(res.messsage);
+          if (!res.success) return alert(res.error);
           const user = {
             email: res.response.user.email,
             name: res.response.user.name,
