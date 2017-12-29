@@ -53,7 +53,7 @@ export class UserService {
                 token: res.response.token
             };
             this.store.dispatch({ type: 'SET_USER', payload: { user } });
-            this.router.navigate(['/profile']);
+            this.router.navigate(['/']);
         });
     }
 }
