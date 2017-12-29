@@ -18,6 +18,7 @@ import { userReducer } from './ngrx/userReducer';
 import { RequireLoginGuard } from './require-login.guard';
 import { PreventReSignInGuard } from './prevent-re-sign-in.guard';
 import { RequestWithToken } from './services/request-with-token.service';
+import { StoryFormComponent } from './story-form/story-form.component';
 
 const routesConfig: Routes = [
   { path: '', component: HomeComponent },
@@ -35,7 +36,8 @@ const routesConfig: Routes = [
     ProfileComponent,
     HomeComponent,
     NavBarComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    StoryFormComponent
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,9 @@
-<p>
-  home works!
-</p>
+<div *ngIf="!(user | async)">
+  <h3>Chua sign in</h3>
+  <a routerLink="/signin">Sign In</a>
+  <a routerLink="/signin">Sign Up</a>
+</div>
+<div *ngIf="(user | async)">
+  <a routerLink="/profile">Go to profile</a>
+  <app-story-form></app-story-form>
+</div>
