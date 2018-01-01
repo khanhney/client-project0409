@@ -18,4 +18,13 @@ export class StoryService {
         .then(res => console.log(res))
         .catch(err => console.log(err));
     }
+
+    getAllStory() {
+        this.request.get('/story')
+        .then(res => {
+            const { success, stories } = res;
+            if (!success) return;
+            this.store.dispatch({ type: 'SET_STORIES', payload: { stories } });
+        });
+    }
 }

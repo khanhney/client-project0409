@@ -14,11 +14,13 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { userReducer } from './ngrx/userReducer';
+import { storiesReducer } from './ngrx/storiesReducer';
 
 import { RequireLoginGuard } from './require-login.guard';
 import { PreventReSignInGuard } from './prevent-re-sign-in.guard';
 import { RequestWithToken } from './services/request-with-token.service';
 import { StoryFormComponent } from './story-form/story-form.component';
+import { StoriesComponent } from './stories/stories.component';
 
 const routesConfig: Routes = [
   { path: '', component: HomeComponent },
@@ -37,14 +39,15 @@ const routesConfig: Routes = [
     HomeComponent,
     NavBarComponent,
     PageNotFoundComponent,
-    StoryFormComponent
+    StoryFormComponent,
+    StoriesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    StoreModule.forRoot({ user: userReducer }),
+    StoreModule.forRoot({ user: userReducer, stories: storiesReducer }),
     RouterModule.forRoot(routesConfig)
   ],
   providers: [

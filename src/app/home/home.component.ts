@@ -10,10 +10,11 @@ import { Observable } from 'rxjs/Observable';
 })
 export class HomeComponent implements OnInit {
   user: Observable<User>;
-  constructor(private store: Store<AppState>) { }
+  constructor(
+    private store: Store<AppState>
+  ) { }
 
   ngOnInit() {
     this.user = this.store.select('user');
   }
-
 }
