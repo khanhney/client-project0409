@@ -1,0 +1,6 @@
+<p style="padding: 10px; margin: 10px; font-size: 20px">
+  {{ story.content }}
+</p>
+<button (click)="toggleLikeStory();" [style.backgroundColor]="isLiked ? 'lightblue': 'white'">
+  {{ story.fans.length }} likes
+</button>

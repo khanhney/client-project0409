@@ -4,6 +4,7 @@ export interface ServerResponse {
 }
 
 export interface User {
+    _id: string;
     name: string;
     token: string;
     email: string;
@@ -13,7 +14,7 @@ export interface Story {
     _id: string;
     content: string;
     author: { name: string };
-    fans: [{ name: string }];
+    fans: string[];
 }
 
 export interface AppState {

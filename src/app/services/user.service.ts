@@ -19,6 +19,7 @@ export class UserService {
             if (!res.success) return alert(res.error);
             const user = {
                 email: res.response.user.email,
+                _id: res.response.user._id,
                 name: res.response.user.name,
                 token: res.response.token
             };
@@ -50,7 +51,8 @@ export class UserService {
             const user = {
                 email: res.response.user.email,
                 name: res.response.user.name,
-                token: res.response.token
+                token: res.response.token,
+                _id: res.response.user._id,
             };
             this.store.dispatch({ type: 'SET_USER', payload: { user } });
             this.router.navigate(['/']);

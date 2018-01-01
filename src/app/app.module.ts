@@ -21,6 +21,7 @@ import { PreventReSignInGuard } from './prevent-re-sign-in.guard';
 import { RequestWithToken } from './services/request-with-token.service';
 import { StoryFormComponent } from './story-form/story-form.component';
 import { StoriesComponent } from './stories/stories.component';
+import { StoryComponent } from './story/story.component';
 
 const routesConfig: Routes = [
   { path: '', component: HomeComponent },
@@ -40,7 +41,8 @@ const routesConfig: Routes = [
     NavBarComponent,
     PageNotFoundComponent,
     StoryFormComponent,
-    StoriesComponent
+    StoriesComponent,
+    StoryComponent
   ],
   imports: [
     BrowserModule,

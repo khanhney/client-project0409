@@ -1,3 +1,6 @@
-<p *ngFor="let story of (stories | async)">
-  {{ story.content }}
-</p>
+<app-story
+    *ngFor="let story of (stories | async)"
+    [story]="story"
+    [userId]="(user | async)._id"
+>
+</app-story>
